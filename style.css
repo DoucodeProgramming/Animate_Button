@@ -1,0 +1,90 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Button Style */
+.rainbow-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px 40px;
+  border: none;
+  outline: none;
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #00ff00,
+    #0000ff,
+    #8a00d4
+  );
+  background-size: 400%;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Rainbow Animation on hover */
+.rainbow-btn:hover {
+  background-position: 100%;
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.rainbow-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Button Hover Circle Animation */
+.rainbow-btn:hover::before {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* On focus */
+.rainbow-btn:focus {
+  outline: none;
+}
+
+/* Optional: Adding a bit of bounce */
+.rainbow-btn:active {
+  transform: scale(0.95);
+  transition: all 0.1s ease-in-out;
+}
